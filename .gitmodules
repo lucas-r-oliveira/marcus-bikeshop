@@ -1,0 +1,3 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/lucas-r-oliveira/marcus-bikeshop-backend.git
