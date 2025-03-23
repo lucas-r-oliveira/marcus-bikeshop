@@ -3,7 +3,7 @@ Marcus Bikeshop is Marcus' online e-commerce store for his bike shop business.
 It offers a catalog of bicycles (and possibly in the future other sports equipment), which the client can fully customize.
 It allows Marcus to customize which parts and which options for the different parts are provided per Bike (Product).
 
-This is for a technical exercise.
+This project is for a technical exercise.
 
 # 2. Installation & Setup
 ⚠️ Before cloning the repository ⚠️
@@ -38,20 +38,19 @@ DDD allows us to capture the requirements of the business into a dependency-free
 ##### The Domain Model
 First things first, a brief introduction to some DDD concepts:
 
-![DDD objects](https://github.com/lucas-r-oliveira/marcus-bikeshop/blob/main/docs/"Pasted image 20250322150857.png"?raw=true)
+![DDD objects](https://github.com/user-attachments/assets/c5d2400e-d65e-4b32-92db-54f1d682cae3)
 - Entity - Used to describe a domain object that has a long-lived identity.
 - Value Object - A _value object_ is any domain object that is uniquely identified by the data it holds; These are usually immutable.
--  Aggregate - An _aggregate_ is just a domain object that contains other domain objects and lets us treat the whole collection as a single unit. Each aggregate is usually associated with a Repository (described two subsections below).
+- Aggregate - An _aggregate_ is just a domain object that contains other domain objects and lets us treat the whole collection as a single unit. Each aggregate is usually associated with a Repository (described two subsections below).
 - Domain Service - Something that is neither an Entity nor a Value Object. Not to be confused with Service Layer services.
 
 
 Below we see the domain model of this business boiled down to its absolute essentials:
 
-![Domain model](https://github.com/lucas-r-oliveira/marcus-bikeshop/blob/main/docs/"Pasted image 20250322161306.png"?raw=true)
-
+![Domain model](https://github.com/user-attachments/assets/2c3681ef-1f9e-4666-9ab8-36278842d274)
 
 If we consider the domain of this application to be e-commerce, we can then divide it into multiple subdomains. A possible example:
-![E-commerce domain](https://github.com/lucas-r-oliveira/marcus-bikeshop/blob/main/docs/"Pasted image 20250321220525.png"?raw=true)
+![e-commerce domain](https://github.com/user-attachments/assets/caab4168-dae6-4023-abb5-f952fa115337)
 
 [Reference](https://simonatta.medium.com/e-commerce-by-ddd-bf4459272188)
 
@@ -63,7 +62,7 @@ For this app we've considered 3 subdomains only:
 ##### The overall architecture
 This was the Architecture achieved. 
 
-![E-commerce domain](https://github.com/lucas-r-oliveira/marcus-bikeshop/blob/main/docs/"Pasted image 20250323104940.png"?raw=true)
+![overall architecture](https://github.com/user-attachments/assets/609f1566-4de3-4f52-8596-25088fb4d2b4)
 We can see the dependency flow is top-to-bottom.
 But let's go over this bottom-to-top.
 
