@@ -6,7 +6,7 @@ It allows Marcus to customize which parts and which options for the different pa
 This project is for a technical exercise.
 
 # 2. Installation & Setup
-⚠️ Before cloning the repository ⚠️
+⚠️ Before cloning the repository ⚠️ <br>
 This repository is composed of other git repos. That means this repo is composed of git submodules. So, to clone the repo you need to:
 ```
 # Clone the repository
@@ -18,7 +18,7 @@ And since everything is dockerized, to run the project you need to make sure doc
 docker compose up
 ```
 
-⚠️ Do note: At the time of writing this, the application still has bugs and missing features. Please keep that in mind before running the project. ⚠️
+⚠️ Do note: At the time of writing this, the application still has bugs and missing features. Please keep that in mind before running the project.
 
 # 3. Architecture
 For this project I went for a Domain-Driven Design (DDD) approach. 
@@ -35,10 +35,11 @@ DDD allows us to capture the requirements of the business into a dependency-free
 4) It allows us to introduce patterns and abstractions that would otherwise be difficult. 
 
 ### How was DDD applied to this app?
-##### The Domain Model
+#### The Domain Model
 First things first, a brief introduction to some DDD concepts:
 
-![DDD objects](https://github.com/user-attachments/assets/c5d2400e-d65e-4b32-92db-54f1d682cae3)
+<img alt="domain objects" src="https://github.com/user-attachments/assets/c5d2400e-d65e-4b32-92db-54f1d682cae3" width="500">
+
 - Entity - Used to describe a domain object that has a long-lived identity.
 - Value Object - A _value object_ is any domain object that is uniquely identified by the data it holds; These are usually immutable.
 - Aggregate - An _aggregate_ is just a domain object that contains other domain objects and lets us treat the whole collection as a single unit. Each aggregate is usually associated with a Repository (described two subsections below).
@@ -47,10 +48,13 @@ First things first, a brief introduction to some DDD concepts:
 
 Below we see the domain model of this business boiled down to its absolute essentials:
 
-![Domain model](https://github.com/user-attachments/assets/2c3681ef-1f9e-4666-9ab8-36278842d274)
+<img alt="domain model" src="https://github.com/user-attachments/assets/2c3681ef-1f9e-4666-9ab8-36278842d274" width="500"><br>
+
 
 If we consider the domain of this application to be e-commerce, we can then divide it into multiple subdomains. A possible example:
-![e-commerce domain](https://github.com/user-attachments/assets/caab4168-dae6-4023-abb5-f952fa115337)
+
+<img alt="e-commerce domain" src="https://github.com/user-attachments/assets/caab4168-dae6-4023-abb5-f952fa115337">
+
 
 [Reference](https://simonatta.medium.com/e-commerce-by-ddd-bf4459272188)
 
@@ -59,10 +63,11 @@ For this app we've considered 3 subdomains only:
 - Orders
 - Configuration Rules
 
-##### The overall architecture
+#### The overall architecture
 This was the Architecture achieved. 
 
-![overall architecture](https://github.com/user-attachments/assets/609f1566-4de3-4f52-8596-25088fb4d2b4)
+![overall architecture](https://github.com/user-attachments/assets/99b174ac-8d22-4866-9636-3c61b934897a)
+
 We can see the dependency flow is top-to-bottom.
 But let's go over this bottom-to-top.
 
@@ -84,7 +89,7 @@ Each subdomain has its own blueprint, i.e., it's split into its own collection o
 
 
 \*SQLAlchemy is an ORM library for Python. More info in section Tech Stack > Backend
-##### Next steps?
+#### Next steps?
 So far, we've achieved an interesting architecture that helps us plenty already.
 This architecture makes it easier for us to move towards an Event-Driven architecture, if we so desire.
 
@@ -94,13 +99,13 @@ For immediate improvements, we can easily spot that our API layer has **way too 
 So far, this all sounds great, but every decision has its tradeoffs and, naturally, DDD isn't an exception.
 So, what are the tradeoffs considered here?
 
-##### Overhead for simple apps
+#### Overhead for simple apps
 DDD introduces a lot of abstractions and patterns and introducing them in your code does not come for free. It does not contribute to **not** adding complexity to our codebase. It does, however, allow us to choose **where** we want to add complexity.
 
 For a simple app, you could argument that DDD introduces way too much complexity and overhead for the benefit it gives. And, generally, I would agree with that statement.
 You could also make the argument that this app is simple enough that we might not need DDD. I do agree with it to an extent. However, the requirements provided are not that of a fully-fledged app. So even for the simple version of a fully functional app that represents this business, we're missing out on a lot of (sub)domains. e.g.: Payments, Authentication, Shipping, Inventory, etc. Hence, if this were a real app, I believe that DDD is a strong architecture that helps us ensure our application is scalable and maintainable, by having our layers loosely coupled. If we only consider this exercise alone, then yes, DDD can bring quite the overhead.
 
-##### Learning curve
+#### Learning curve
 DDD brings a new way of working. It introduces a lot of concepts (Entities, Value Objects, Bounded Contexts, ...) so, naturally, there's a learning curve associated to it. 
 It is a skill and, as with any skill, it takes time to master.
 
@@ -113,12 +118,12 @@ Here, it wasn't any different and that was a pain point for me.
 
 Overview
 ```
-    - Backend: Flask (Python)
-    - Frontend: React 18 (Typescript)
-    - Database: For now SQLite, but maybe PostgreSQL if I have the time
-    - State Management: React Contexts
-    - API: REST (OpenAPI)
-	- Deployment: Docker
+- Backend: Flask (Python)
+- Frontend: React 18 (Typescript)
+- Database: For now SQLite, but maybe PostgreSQL if I have the time
+- State Management: React Contexts
+- API: REST (OpenAPI)
+- Deployment: Docker
 ```
 
 ### Backend
