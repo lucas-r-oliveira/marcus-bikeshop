@@ -83,8 +83,7 @@ The Service Layer is responsible for orchestrating our workflows and defining th
 
 **Flask**
 Flask (API) acts as the entrypoint for the entire application. It is responsible for instantiating our database (if we have any) and the appropriate repositories to interact with it. It also instantiates our Service Layer services, on which we inject the Repositories. 
-That's also where we define our views 
-Each subdomain has its own blueprint, i.e., it's split into its own collection of routes and views.
+That's also where we define our views. Each subdomain has its own blueprint, i.e., it's split into its own collection of routes and views.
 
 
 
