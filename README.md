@@ -167,6 +167,29 @@ Like DDD, TDD is also a skill which takes time to master and definitely a skill 
 
 ⚠️ Instructions on how to run the tests will follow soon!
 
-# 6. References
+# 6. Difficulties, areas of improvement, etc.
+For me, the most challenging part of this challenge was to balance out coming up with a scalable and maintainable architecture, and coming up with an MVP. All within time.
+In a real world scenario, you can "easily" come up with an MVP and then refactor. Here, that wasn't the case. You only have one shot. 
+
+That's why I started off by putting so much thought into the design and architecture of the application. I wanted to get it right from the start.
+I spent quite some time on this initial step: diagrams, unit tests and modelling my domain... Soon enough, I realized that I was already spending too much time here and that I was falling short of time for the actual implementation.
+
+This made me switch focus: abandon the repository I was working on because I wasn't very keen on the actual implementation details (feel free to ask me about it, if you need to take a look), start a new repo and start specifically with the frontend, because it was what I was least comfortable with and it had the most visual impact. This proved to be an awful idea. It ended up creating the exact problem I was trying to solve. I wasn't going into it 100% blind, as I had some idea of what I wanted to achieve already, but still, I let the frontend implementation guide my **initial** architecture.
+Naturally, this led to a lot of loose ends and a lot of inconsistencies when it come to implementing the backend. I ended up hammering a lot of code together, making it more and more difficult to add new code and making the existing one more error-prone as I moved. It quickly became a very frustrating experience.
+
+If I were starting over, I would try to pinpoint exactly what the company expects to see and what are some things that can be left out in case of time shortage.
+
+Some of the things that were either left out or have room for improvement:
+- Logging
+- Frontend accessibility
+- Better exception handling flow
+- Testing
+- ...
+
+There were, of course, technical challenges involved as well.
+As mentioned previously, both TDD and DDD are a skill of its own, which require a **lot** of practice to master. I still have quite a way to go.
+
+
+# 7. References
 - https://martinfowler.com/
 - https://www.cosmicpython.com/book/preface.html
