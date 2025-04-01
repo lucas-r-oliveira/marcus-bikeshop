@@ -58,7 +58,7 @@ If we consider the domain of this application to be e-commerce, we can then divi
 
 [Reference](https://simonatta.medium.com/e-commerce-by-ddd-bf4459272188)
 
-For this app we've considered 3 subdomains only:
+For this app I've considered 3 subdomains only:
 - Product (Catalog)
 - Orders
 - Configuration Rules
@@ -193,3 +193,4 @@ As mentioned previously, both TDD and DDD are a skill of its own, which require 
 # 7. References
 - https://martinfowler.com/
 - https://www.cosmicpython.com/book/preface.html
+- https://simonatta.medium.com/e-commerce-by-ddd-bf4459272188
